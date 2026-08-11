@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linux 发行版图鉴 — 从 Debian 到 NixOS</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge" aria-hidden="true">&gt;_</div>
+    <h1 class="hero-title">Linux <span class="accent">发行版</span>图鉴</h1>
+    <p class="hero-sub">从 1993 年的 Debian 到不可变的 NixOS —— <span id="stat-distros" class="stat">0</span> 个发行版、<span id="stat-families" class="stat">0</span> 大家族系、<span id="stat-branches" class="stat">0</span> 条分支关系，全在这里。</p>
+    <div class="hero-meta mono" id="hero-meta">$ whoami &amp;&amp; uname -sr</div>
+  </div>
+  <div class="hero-wave" aria-hidden="true"></div>
+</header>
+
+<main class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-sticky">
+      <div class="search-box">
+        <label class="search-label mono" for="search">$ grep -i</label>
+        <input id="search" type="search" placeholder="搜索发行版 / 标签 / 特点…" autocomplete="off">
+      </div>
+      <nav class="family-nav" id="family-nav" aria-label="发行版家族筛选"></nav>
+      <div class="sidebar-note">
+        <p class="mono note-title">// 关于数据</p>
+        <p>所有发行版信息与 logo 均爬取自各项目官方网站，尽量包含每个发行版的主要分支。点击卡片查看详情与血统关系。</p>
+      </div>
+    </div>
+  </aside>
+
+  <section class="content">
+    <div class="toolbar mono">
+      <span id="result-count">…</span>
+      <span class="toolbar-hint">按家族筛选 · 点击卡片看详情</span>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty-state" id="empty" hidden>
+      <p class="mono">$ find /distros -name "*nothing*"</p>
+      <p>没有匹配的发行版，换个关键词试试？</p>
+    </div>
+  </section>
+</main>
+
+<div class="modal-backdrop" id="modal-backdrop" hidden></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" hidden>
+  <button class="modal-close" id="modal-close" aria-label="关闭">×</button>
+  <div class="modal-body" id="modal-body"></div>
+</div>
+
+<footer class="footer mono">
+  <span>linux-distros-page · data crawled from official sites · 2026</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
