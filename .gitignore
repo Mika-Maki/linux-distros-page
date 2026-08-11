@@ -3,3 +3,4 @@ gh_upload2.py
 gh_fix.py
 gh_upload.log
 *.log
+status_snapshot.py
